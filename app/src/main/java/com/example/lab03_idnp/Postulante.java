@@ -1,7 +1,7 @@
 package com.example.lab03_idnp;
 
 public class Postulante {
-    private int dni;
+    private String dni;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
@@ -9,11 +9,11 @@ public class Postulante {
     private String colegio;
     private String carrera;
 
-    public int getDni(){
+    public String getDni(){
         return  dni;
     }
 
-    public  void setDni(int dni){
+    public  void setDni(String dni){
         this.dni = dni;
     }
 
@@ -63,5 +63,16 @@ public class Postulante {
 
     public void setCarrera(String carrera) {
         this.carrera = carrera;
+    }
+
+    public String toString(){
+        return "Postulante:"+
+                "DNI: " + dni + '\n' +
+                "Nombre: " + nombre + '\n' +
+                "Apellido Paterno: " + apellidoPaterno + '\n' +
+                "Apellido Materno: " + apellidoMaterno + '\n' +
+                "Fecha de Nac: " + fechaNac + '\n' +
+                "Colegio: " + colegio + '\n' +
+                "Carrera: " + carrera + '\n';
     }
 }
