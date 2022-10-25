@@ -8,7 +8,7 @@
     android:background="#202732">
 
     <Button
-        android:id="@+id/menu_new"
+        android:id="@+id/btnNuevo"
         android:layout_width="201dp"
         android:layout_height="50dp"
         android:layout_marginStart="105dp"
@@ -35,6 +35,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu_new"
+        app:layout_constraintTop_toBottomOf="@+id/btnNuevo"
         android:background="@drawable/button_rounded"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
