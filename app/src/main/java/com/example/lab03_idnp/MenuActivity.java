@@ -6,6 +6,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,9 +20,24 @@ import java.util.List;
 public class MenuActivity extends AppCompatActivity {
     Button btnRegNew;
     Button btnInfoPost;
+
     ArrayList<Postulante> postulanteList = new ArrayList<Postulante>();
     Postulante postul = new Postulante();
 
+
+    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent intent = result.getData();
+                        Bundle args = intent.getBundleExtra("bundle");
+                        postulanteList.add((Postulante) args.getSerializable("postulante"));
+                        // Handle the Intent
+                    }
+                }
+            });
+/*
     //Registro
     ActivityResultLauncher<Intent>launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
@@ -52,7 +68,7 @@ public class MenuActivity extends AppCompatActivity {
             }
 
         }
-    });
+    });*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +81,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentRegistro = new Intent(MenuActivity.this,PostulanteRegistroActivity.class);
-                launcher.launch(intentRegistro);
+                mStartForResult.launch(intentRegistro);
 
             }
         });
@@ -73,9 +89,9 @@ public class MenuActivity extends AppCompatActivity {
         btnInfoPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent sendintent = new Intent(MenuActivity.this, PostulanteInfoActivity.class);
+                Intent sendintent = new Intent(getApplicationContext(), PostulanteInfoActivity.class);
                 Bundle args = new Bundle();
-                args.putSerializable("list", postulanteList);
+                args.putSerializable("list", (Serializable) postulanteList);
                 sendintent.putExtra("BUNDLE", args);
                 startActivity(sendintent);
             }

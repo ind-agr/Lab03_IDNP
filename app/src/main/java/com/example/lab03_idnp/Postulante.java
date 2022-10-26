@@ -1,6 +1,8 @@
 package com.example.lab03_idnp;
 
-public class Postulante {
+import java.io.Serializable;
+
+public class Postulante implements Serializable {
     private String dni;
     private String nombre;
     private String apellidoPaterno;
