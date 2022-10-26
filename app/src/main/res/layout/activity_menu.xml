@@ -16,14 +16,14 @@
         android:layout_marginEnd="105dp"
         android:layout_marginBottom="24dp"
         android:text="Nuevo"
-        app:layout_constraintBottom_toTopOf="@+id/infPostulante"
+        app:layout_constraintBottom_toTopOf="@+id/btnInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/button_rounded"/>
 
     <Button
-        android:id="@+id/infPostulante"
+        android:id="@+id/btnInfo"
         android:layout_width="201dp"
         android:layout_height="50dp"
         android:layout_marginStart="105dp"

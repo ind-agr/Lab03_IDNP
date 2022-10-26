@@ -12,14 +12,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
     Button btnRegNew;
-    private List<Postulante> postulanteList = new ArrayList<>();
+    Button btnInfoPost;
+    ArrayList<Postulante> postulanteList = new ArrayList<Postulante>();
     Postulante postul = new Postulante();
 
+    //Registro
     ActivityResultLauncher<Intent>launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
@@ -51,13 +54,12 @@ public class MenuActivity extends AppCompatActivity {
         }
     });
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         btnRegNew = findViewById(R.id.btnNuevo);
-
+        btnInfoPost = findViewById(R.id.btnInfo);
 
         btnRegNew.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,5 +69,17 @@ public class MenuActivity extends AppCompatActivity {
 
             }
         });
+
+        btnInfoPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendintent = new Intent(MenuActivity.this, PostulanteInfoActivity.class);
+                Bundle args = new Bundle();
+                args.putSerializable("list", postulanteList);
+                sendintent.putExtra("BUNDLE", args);
+                startActivity(sendintent);
+            }
+        });
+
     }
 }

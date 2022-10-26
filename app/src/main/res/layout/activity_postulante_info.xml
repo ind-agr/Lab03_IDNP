@@ -7,29 +7,14 @@
     tools:context=".PostulanteInfoActivity"
     android:background="#202732">
 
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="161dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btnBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="53dp"
         android:layout_marginEnd="40dp"
         android:text="Buscar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -37,14 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="45dp"
         android:layout_marginBottom="573dp"
         android:text="DNI:"
         android:textColor="@color/textColor"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txt2Nom"
@@ -105,6 +88,84 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/searchDNI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="28dp"
+        android:ems="10"
+        android:hint="DNI"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="@color/textColor"
+        app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/edt2DNI"
+        android:layout_width="159dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="573dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/edt2Name"
+        android:layout_width="159dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="523dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/edt2ApePat"
+        android:layout_width="96dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="473dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/edt2ApeMat" />
+
+    <TextView
+        android:id="@+id/edt2ApeMat"
+        android:layout_width="96dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="473dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/edt2FecNac"
+        android:layout_width="159dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="423dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/edt2Colegio"
+        android:layout_width="159dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="373dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/edt2Carrera"
+        android:layout_width="159dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="323dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
