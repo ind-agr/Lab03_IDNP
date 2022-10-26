@@ -66,11 +66,9 @@ public class PostulanteInfoActivity extends AppCompatActivity {
                         date.setText(datFechaNacimiento);
                         school.setText(datColegio);
                         major.setText(datCarrera);
-                        Log.d(TAG,"there is");
                     }
                     else {
                         Toast.makeText(PostulanteInfoActivity.this,"Error :(",Toast.LENGTH_SHORT).show();
-                        Log.d(TAG,"no hay");
                     }
                 }
             }
